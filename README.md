@@ -82,3 +82,109 @@ var job = "Programmer";
 ```
 
 - Veremos sobre escopo de variáveis depois.
+
+# Operações Básicas
+
+- Operadores nos permitem transformar/combinar valores. Há vários tipos de operadores, veremos cada um deles.
+
+## Operadores Aritméticos
+
+- Adição
+
+```js
+let valorUm = 3;
+let valorDois = 5;
+// O resultado é 8.
+let soma = valorUm + valorDois;
+```
+
+- Subtração
+
+```js
+let valorUm = 4;
+let valorDois = 3;
+// O resultado é 1.
+let soma = valorUm - valorDois;
+```
+
+- Multiplicação
+
+```js
+let valorUm = 4;
+let valorDois = 5;
+// O resultado é 20.
+let soma = valorUm * valorDois;
+```
+
+- Divisão
+
+```js
+let valorUm = 10;
+let valorDois = 5;
+// O resultado é 2.
+let soma = valorUm / valorDois;
+```
+
+- Módulo(Resto da divisão)
+
+```js
+let valorUm = 5;
+let valorDois = 3;
+// O resultado é 2.
+let soma = valorUm % valorDois;
+```
+
+- Exponenciação
+
+```js
+let valorUm = 2;
+let valorDois = 3;
+// O resultado é 8.
+let soma = valorUm ** valorDois;
+```
+
+- Podemos "somar strings", ou seja, concatenar(fazer a junção de strings) usando o operador de adição
+
+```js
+let firstName = "Douglas";
+let lastName = "Jesus";
+
+// Exibe "Douglas Jesus
+console.log(firstName + " " + lastName);
+```
+
+## Operadores de Atribuição
+
+- Um exemplo de atribuição seria o: =
+
+```js
+// Note que ATRIBUIMOS 5 a variável x.
+let x = 5;
+```
+
+- Alguns outros operadores de atribuição seria: +=, -=, \*=, /=, %=, x++ e x--;
+
+# Operadores de Comparação
+
+- Operadores de comparação produzem valor booleanos. Ou seja, true ou false.
+
+- Os operadores são: >, >=, <, <=, ==, === e !=.
+
+```js
+let x = 3;
+let y = 2;
+// True
+console.log(x > y);
+// True
+console.log(x >= y);
+// False
+console.log(x < y);
+// False
+console.log(x <= y);
+// False
+console.log(x == y);
+// False
+console.log(x === y);
+// True
+console.log(x != y);
+```
