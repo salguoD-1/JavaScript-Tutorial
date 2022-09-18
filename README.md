@@ -213,3 +213,113 @@ const lastName = "Jesus";
 // Exibe Douglas Jesus
 const result = `${firstName} ${lastName}`;
 ```
+
+# Estrutura Condicional
+
+- Uma estrutura condicional nos permite executar determinado bloco de código a depender da sua condição. O resultado da análise da condição é um valor booleano. Digamos que para uma pessoa dirigir é necessário ter uma idade maior ou igual a 18 e possuir CNH, vejamos esse exemplo no código abaixo:
+
+```js
+const age = 22;
+const hasCNH = true;
+
+if (age >= 18) {
+  if (hasCNH == true) {
+    console.log("Pode dirigir!");
+  } else {
+    console.log("Não possui CNH, logo não pode dirigir!");
+  }
+} else {
+  console.log("Idade insuficiente para tirar a CNH!");
+}
+```
+
+- No exemplo acima temos a estrutura condional if, note que a condição é a idade ser maior ou igual a 18, caso seja temos o segundo bloco condicional onde a condição é possuir CNH. Como as duas condições são verdadeiras temos que será impresso Pode dirigir! na tela. Caso a idade fosse menor que 18 ou a pessoa não tivesse CNH, temos que o bloco else seria executado.
+
+# Type Conversion and Coercion
+
+- Type Conversion é quando convertemos um tipo de dado para outro tipo de dado. Já Type Coercion é quando a linguagem JavaScript converte automaticamente um tipo para outro tipo.
+
+- Exemplo de Type Conversion
+
+```js
+const inputYear = "1991";
+// Retorna 199118, note que concatenou.
+console.log(inputYear + 18);
+
+// Uma forma de resolver esse problema é utilizando a função Number() que converte um valor da string para um número.
+// Retorna 2009.
+console.log(Number(inputYear) + 18);
+```
+
+- Nota: Se tentarmos converter uma string que não é um número teremos um retorno do tipo NaN(Not a Number);
+
+```js
+// Retorna NaN
+console.log(Number("Douglas"));
+```
+
+- Convertendo um valor do tipo número para um valor do tipo string usando a função String()
+
+```js
+// Exibe 23 que é uma string.
+console.log(String(23));
+```
+
+- Exemplo de Type Coercion:
+
+```js
+// Graças ao Type Coercion, o número 23 será convertido para o tipo string.
+console.log("I am " + 23 + " years old");
+
+// Exibe 10, pois converte 23 e 10 para o tipo number.
+console.log("23" - "10" - 3);
+// Exibe 46, pois converte as duas strings para number.
+console.log("23" * "2");
+```
+
+# Truthy and Falsy Values
+
+- JavaScript possui 5 valores falsos, sendo eles: **0, '', undefined, null e NaN.**
+
+```js
+// False
+console.log(Boolean(0));
+// False
+console.log(Boolean(undefined));
+// True
+console.log(Boolean("Jonas"));
+// True
+console.log(Boolean({}));
+// False
+console.log(Boolean(""));
+```
+
+- Exemplo utilizando a estrutura if
+
+```js
+const money = 0;
+// Como money é zero, temos que o resultado da condição será convertido(type coercion) para um valor booleano, nesse caso false.
+if (money) {
+  console.log("Don't spend it all");
+} else {
+  console.log("You should get a job!");
+}
+```
+
+# Equality Operators: == vs ===
+
+- Os operadores de igualdade servem para checar se dois resultados são iguais ou não. Nesse caso, o operador == chega se os valores são iguais, ou seja, ele não checa se os tipos de dados desse valor são iguais. Já o operador === checa se os valores são iguais e se os tipos de dados são iguais.
+
+```js
+const num1 = 3;
+const num2 = "3";
+// Exibe true, pois checa apenas os valores.
+console.log(num1 == num2);
+// False, pois o primeiro valor é do tipo Number e o segundo do tipo String.
+console.log(num1 === num2);
+```
+
+
+# Logical Operators
+
+- 

@@ -25,8 +25,8 @@ let johnHeight = 1.95;
 let markHigherBMI =
   bmiPerson(markWeight, markHeight) > bmiPerson(johnWeight, johnHeight);
 console.log(`Mark has a higher BMI than John?: ${markHigherBMI}`);
-console.log(`Mark BMI is: ${bmiPerson(markWeight, markHeight)}kg`);
-console.log(`John BMI is: ${bmiPerson(johnWeight, johnHeight)}kg`);
+console.log(`Mark BMI is: ${bmiPerson(markWeight, markHeight)}`);
+console.log(`John BMI is: ${bmiPerson(johnWeight, johnHeight)}`);
 
 console.log("\nCase 2\n");
 
@@ -38,5 +38,5 @@ johnHeight = 1.76;
 markHigherBMI =
   bmiPerson(markWeight, markHeight) > bmiPerson(johnWeight, johnHeight);
 console.log(`Mark has a higher BMI than John?: ${markHigherBMI}`);
-console.log(`Mark BMI is: ${bmiPerson(markWeight, markHeight)}kg`);
-console.log(`John BMI is: ${bmiPerson(johnWeight, johnHeight)}kg`);
+console.log(`Mark BMI is: ${bmiPerson(markWeight, markHeight)}`);
+console.log(`John BMI is: ${bmiPerson(johnWeight, johnHeight)}`);
