@@ -1,0 +1,1 @@
+# Anotações dos meus estudos relacionados a linguagem JavaScript.
