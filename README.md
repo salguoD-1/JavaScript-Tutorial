@@ -188,3 +188,28 @@ console.log(x === y);
 // True
 console.log(x != y);
 ```
+
+# Operadores de Precedência
+
+- É a ordem em que operações são executadas, por exemplo:
+
+```js
+const numOne = 3;
+const numTwo = 2;
+console.log(numOne + numTwo > numOne);
+```
+
+- No exemplo acima temos que a operação de adição é executada primeiro e em seguida, a operação de comparação 5 > 3 é executada, retornando um valor booleano.
+
+- Para saber mais sobre a ordem de precedência de operadores visite a documentação da [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence).
+
+# Strings and Template Literals
+
+- Template Literals é uma estrutura que nos permite armazenar/exibir uma string de forma mais organizada e simples. O exemplo abaixo mostra o uso dessa estrutura e a sua sintaxe.
+
+```js
+const firstName = "Douglas";
+const lastName = "Jesus";
+// Exibe Douglas Jesus
+const result = `${firstName} ${lastName}`;
+```
