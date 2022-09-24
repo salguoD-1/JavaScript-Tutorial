@@ -126,3 +126,61 @@ function calcAge1(birthYear) {
 ```
 
 Note que no exemplo acima a **declaração de função** nos permite chamar a função antes mesmo dela ser declarada. Se fizermos isso com a **expressão de função** resultaria em um error do tipo **ReferenceError: Cannot acess 'nome_da_função' before inicialization**. Esse problema acontece por conta do [Hoisting](https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting) que veremos futuramente.
+
+Mas qual das duas funções usar? A que você desejar. Particularmente prefiro utilizar expressões de funções.
+
+# Arrow Functions
+
+Arrow Functions é uma terceira forma de utilizar funções, ela foi introduzida na versão ES6. Chamamos de Arrow Function ou Função de Seta.
+
+Arrow Function é uma forma especial de **expressão de função** que é mais curta e direta.
+
+```js
+"use strict";
+// Note que passamos o parâmetro dentro dos parênteses e usamos a notação de seta que por fim retorna algo.
+const calcAge = (birthYear) => 2022 - birthYear;
+// Chama a função e imprime o valor retornado.
+console.log(calcAge(1999));
+```
+
+Note que no exemplo acima não fazemos uso da palavra reservada **return**, após a notação da seta temos o retorno da função. No entanto, essa forma só funciona quando temos apenas um parâmetro e apenas uma linha de retorno.
+
+Quando adicionamos mais parâmetros devemos utilizar chaves para colocar nosso código dentro e utilizar a palavra reservada return.
+
+```js
+"use strict";
+
+const yearsUntilRetirement = (birthYear) => {
+  // Calculamos a idade.
+  const age = 2022 - birthYear;
+  // Calculamos quantos anos falta para a aposentadoria.
+  const retirement = 65 - age;
+  // Retornamos a quantidade de anos restantes até a aposentadoria.
+  return retirement;
+};
+// Chamamos a função e passamos 1999 como argumento.
+console.log(yearsUntilRetirement(1999));
+```
+
+Utilizando mais de um parâmetro temos
+
+```js
+"use strict";
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2022 - birthYear;
+  const retirement = 65 - age;
+
+  // Retornamos um template literal.
+  return `${firstName} retires in ${retirement} years!`;
+};
+// Douglas retires in 42 years!
+console.log(yearsUntilRetirement(1999, "Douglas"));
+```
+
+Note que passamos dois parâmetros, para isso é necessário separar cada parâmetro com vírgula.
+
+Mas qual a diferença entre **arrow functions** e as funções tradicionais? Bem, a diferença é que arrow function não possui a palavra reservada **this**. Veremos isso mais para frente.
+
+# Functions Calling Other Functions
+
