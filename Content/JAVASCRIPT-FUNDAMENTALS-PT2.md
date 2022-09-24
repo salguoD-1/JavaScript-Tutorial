@@ -1,0 +1,1 @@
+# Segunda parte do estudo dos fundamentos da linguagem JavaScript
