@@ -86,3 +86,43 @@ function helloUser(name, age) {
 // Chamando a função e passando argumentos para os parâmetros. Para isso é necessário usar a função console.log para exibir o valor retornado.
 console.log(helloUser("Douglas", 22));
 ```
+
+# Function Declarations vs Expressions
+
+Em JavaScript há várias formas diferentes de escrever funções. Além disso, cada tipo de função funciona de uma forma diferente. As funções estudadas acima são chamadas de declarações de funções pois usamos a palavra reservada function.
+
+```js
+"use strict";
+// Declaração de função.
+function helloWorld() {
+  console.log("Hello, world!");
+}
+```
+
+Agora iremos criar uma **expressão de função** que é um outro tipo de função.
+
+```js
+"use strict";
+// A função não possui nome, logo é uma função ANÔNIMA.
+const calcAge = function (birthYear) {
+  return 2022 - birthYear;
+};
+```
+
+Basicamente tudo que está ao lado direito da variável é chamado de expressão. Essa expressão possui um valor que é armazenado na variável calcAge.
+
+Em JavaScript, funções são valores que podem ser armazenados em variáveis.
+
+Mas enfim, qual a grande diferença entre declaração de função e expressão de função? Bem, a **principal diferença é que podemos chamar as declarações de funções antes delas serem definidas no código.**
+
+```js
+"use strict";
+// Note que chamamos a função antes da sua declaração.
+const age1 = calcAge1(1999);
+
+function calcAge1(birthYear) {
+  return 2022 - birthYear;
+}
+```
+
+Note que no exemplo acima a **declaração de função** nos permite chamar a função antes mesmo dela ser declarada. Se fizermos isso com a **expressão de função** resultaria em um error do tipo **ReferenceError: Cannot acess 'nome_da_função' before inicialization**. Esse problema acontece por conta do [Hoisting](https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting) que veremos futuramente.
