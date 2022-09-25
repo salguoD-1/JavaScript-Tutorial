@@ -184,3 +184,63 @@ Mas qual a diferença entre **arrow functions** e as funções tradicionais? Bem
 
 # Functions Calling Other Functions
 
+Usando o exemplo abaixo, imagine que antes de fazermos nosso suco é necessário que outra função corte as frutas em pedaços, vamos ver:
+
+```js
+"use strict";
+const fruitProcessor = (apples, oranges) => {
+  return `Juice with ${apples} apples and ${oranges} oranges.`;
+};
+```
+
+```js
+// Função que corta a fruta em 4 pedaços.
+"use strict";
+const cutFruitPieces = (fruits) => {
+  return fruit * 4;
+};
+```
+
+Unindo as duas funções temos
+
+```js
+"use strict";
+const cutFruitPieces = (fruits) => {
+  return fruits * 4;
+};
+
+const fruitProcessor = (apples, oranges) => {
+  // Chama a função cutFruitPieces que recebe as frutas como parâmetro e retorna a fruta cortada em quatro pedaços.
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+  // Retorna a string literal.
+  return `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+};
+// Chamamos a função e passamos 2 maças e 3 laranjas.
+console.log(fruitProcessor(2, 3));
+```
+
+Ou seja, basicamente temos uma função dentro de uma função. A função interna cutFruitPieces recebe como argumento o valor passado como argumento para a função fruitProcessor e armazena o valor retornado da função cutFruitPieces.
+
+# Introduction to Arrays
+
+Nessa seção iremos estudar nossa primeira estrutura de dados, conhecida como array ou lista. Uma estrutura de dado serve para armazenar dados, ou seja, informações.
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Exibe [ 'Michael', 'Steven', 'Peter' ]
+console.log(friends);
+```
+
+Basicamente no exemplo acima temos uma array(lista) que contém 3 elementos. Cada elemento é representado por um índice que é a posição de cada elemento no array. Na linguagem JavaScript e em muitas outras temos que o índice começa na posição 0. Portanto, o elemento 1 tem índice 0, o elemento 2 tem índice 1 e por ai vai.
+
+Um array(lista) pode armazenar qualquer tipo de dado.
+
+```js
+"use strict";
+const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
+// [ 'Douglas', 22, 'Universidade Federal de Sergipe' ]
+console.log(aboutMe);
+```
+
