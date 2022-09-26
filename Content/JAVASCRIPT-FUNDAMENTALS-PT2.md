@@ -358,6 +358,7 @@ O método includes faz uso do operador strict que analisa o tipo de dado e o val
 Uma aplicação interessante do método includes seria ao testar uma condição usando a estrutura condicional if/else.
 
 ```js
+"use strict";
 const friends = ["Steven", "Peter", "Bob"];
 
 // Como Peter faz parte do array, temos que o valor retornado é true.
