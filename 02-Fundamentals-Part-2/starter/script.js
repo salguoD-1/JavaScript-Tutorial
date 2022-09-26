@@ -15,20 +15,27 @@ const aboutDouglas = {
 
   // Usando uma expressão como função
   calcAge: function () {
-    return 2022 - this.birthYear;
+    // Basicamente criamos a propriedade age, é como se fizessemos aboutDouglas.age = 2022 - this.birthYear;
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+  getSumarry: function () {
+    if (this.hasDriversLicense) {
+      return `${this.firstName} ${
+        this.lastName
+      } is a ${this.calcAge()} years old ${
+        this.job
+      } and he has a driver's license`;
+    } else {
+      return `${this.firstName} ${
+        this.lastName
+      } is a ${this.calcAge()} years old ${
+        this.job
+      } and he has no driver's license`;
+    }
   },
 };
 
-/* A propriedade calcAge pode ser vista como
+console.log(aboutDouglas.getSumarry());
 
-calcAge = function () {
-  return 2022 - this.birthYear;
-};
-
-*/
-
-// Acessando o método calcAge, retorna 23.
-console.log(aboutDouglas.calcAge());
-
-// Usando a notação Bracket temos
-console.log(aboutDouglas["calcAge"]());
+console.log(aboutDouglas)

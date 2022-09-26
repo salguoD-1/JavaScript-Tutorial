@@ -657,3 +657,94 @@ Chamamos funções que estão declaradas dentro de objetos como métodos.
 - A palavra reservada **this**, usada na propriedade calcAge serve para **apontar** para um objeto. Por exemplo, o objeto que aponta para as propriedades presentes no objeto é o objeto aboutDouglas. O que this faz é apontar para o objeto aboutDouglas. Ou seja, no lugar do this é como se fizessemos aboutDouglas.birthYear. Veremos sobre this com mais detalhes futuramente.
 
 ![](explica%C3%A7%C3%A3o-this.png)
+
+- Mas digamos que queremos computar várias vezes a idade de uma pessoa, fazendo uso do método calcAge. Para isso, seria interessante armazenar o valor da computação em uma variável, pois dessa forma o valor ficaria armazenado evitando realizar milhares de computações.
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  birthYear: 1999,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+  hasDriversLicense: false,
+
+  // Usando uma expressão como função
+  calcAge: function () {
+    // Basicamente criamos a propriedade age, é como se fizessemos aboutDouglas.age = 2022 - this.birthYear;
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+};
+
+/* A propriedade calcAge pode ser vista como
+
+calcAge = function () {
+  return 2022 - this.birthYear;
+};
+
+*/
+
+// Acessando o método calcAge, retorna 23.
+console.log(aboutDouglas.calcAge());
+
+// Usando a notação Bracket temos
+console.log(aboutDouglas["calcAge"]());
+
+// Dessa forma armazenamos o valor do cálculo realizado pelo método calcAge, é uma forma mais eficiente.
+console.log(aboutDouglas.age); // 23.
+```
+
+- Desafio: "Douglas is a 23 years old student." etc..., ou seja, retornar um sumário de todos os valores presentes no objeto.
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  birthYear: 1999,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+  hasDriversLicense: false,
+
+  // Usando uma expressão como função
+  calcAge: function () {
+    // Basicamente criamos a propriedade age, é como se fizessemos aboutDouglas.age = 2022 - this.birthYear;
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+  getSumarry: function () {
+    if (this.hasDriversLicense) {
+      return `${this.firstName} ${
+        this.lastName
+      } is a ${this.calcAge()} years old ${
+        this.job
+      } and he has a driver's license`;
+    } else {
+      return `${this.firstName} ${
+        this.lastName
+      } is a ${this.calcAge()} years old ${
+        this.job
+      } and he has no driver's license`;
+    }
+  },
+};
+
+// Chamamos o método getSumarry().
+console.log(aboutDouglas.getSumarry());
+```
+
+Basicamente o que fizemos foi criar um método chamado getSumarry que retorna uma string literal. A depender do valor da propriedade hasDriversLicense retorna uma saída diferente. Note que acessamos as propriedades do objeto aboutDouglas usando this que faz referência ao objeto em questão. Além disso, note que fizemos uso do método calcAge e não da propriedade age em sí, isso se deve ao fato de que não há garantias de que o método calcAge tenha sido chamado para realizar o cálculo.
