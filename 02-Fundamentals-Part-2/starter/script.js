@@ -2,7 +2,7 @@
 const aboutDouglas = {
   firstName: "Douglas",
   lastName: "Cunha de Jesus",
-  age: 22,
+  birthYear: 1999,
   job: "Student",
   friends: [
     "Joãozinho1",
@@ -11,9 +11,24 @@ const aboutDouglas = {
     "Joãozinho4",
     "Joãozinho5",
   ],
+  hasDriversLicense: false,
+
+  // Usando uma expressão como função
+  calcAge: function () {
+    return 2022 - this.birthYear;
+  },
 };
 
-// Acessa a propriedade friends e retorna a quantidade de elementos presentes no array.
-const result = `${aboutDouglas.firstName} has ${aboutDouglas.friends.length} friends and his best friend is called ${aboutDouglas.friends[0]}`;
+/* A propriedade calcAge pode ser vista como
 
-console.log(result);
+calcAge = function () {
+  return 2022 - this.birthYear;
+};
+
+*/
+
+// Acessando o método calcAge, retorna 23.
+console.log(aboutDouglas.calcAge());
+
+// Usando a notação Bracket temos
+console.log(aboutDouglas["calcAge"]());

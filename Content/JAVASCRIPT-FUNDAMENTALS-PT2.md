@@ -610,3 +610,50 @@ console.log(result);
 No exemplo acima acessamos o objeto aboutDouglas e acessamos a propriedade friends e firstName, em seguida usamos o método length para calcular a quantidade de elementos no array(propriedade friends). Por fim, acessamos apenas o elemento de índice 0 que é Joãozinho1.
 
 # Object Methods
+
+Objects permitem armazenar todos os tipos de dados vistos até agora, incluindo funções que na verdade são vistos como valores.
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  birthYear: 1999,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+  hasDriversLicense: false,
+
+  // Usando uma expressão como função
+  calcAge: function () {
+    return 2022 - this.birthYear;
+  },
+};
+
+/* A propriedade calcAge pode ser vista como
+
+calcAge = function () {
+  return 2022 - this.birthYear;
+};
+
+*/
+
+// Acessando o método calcAge, retorna 23.
+console.log(aboutDouglas.calcAge());
+
+// Usando a notação Bracket temos
+console.log(aboutDouglas["calcAge"]());
+```
+
+Note que fizemos uso de uma função como expressão, já que uma função é um valor, logo pode ser armazenado em uma propriedade.
+
+Chamamos funções que estão declaradas dentro de objetos como métodos.
+
+- A palavra reservada **this**, usada na propriedade calcAge serve para **apontar** para um objeto. Por exemplo, o objeto que aponta para as propriedades presentes no objeto é o objeto aboutDouglas. O que this faz é apontar para o objeto aboutDouglas. Ou seja, no lugar do this é como se fizessemos aboutDouglas.birthYear. Veremos sobre this com mais detalhes futuramente.
+
+![](explica%C3%A7%C3%A3o-this.png)
