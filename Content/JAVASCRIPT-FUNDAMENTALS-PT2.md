@@ -509,3 +509,104 @@ console.log(aboutDouglas[interestedIn]);
 ```
 
 No exemplo acima note que se tentarmos acessar a propriedade passada com a notação Dot, vai resultar em undefined pois não é possível acessar diretamente uma propriedade que não existe. Já no segundo caso, é possível acessar o valor passado para a variável interestedIn, pois é possível computar a operação dentro do array.
+
+Como undefined é um valor falso, podemos utilizar uma estrutura if/else para personalizar nossa saída.
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+const interestedIn = prompt(
+  "What do you want to know about Douglas? Choose between firstName, lastName, age, job and friends"
+);
+
+// Caso a propriedade exista, retorna um valor diferente de 0.
+if (aboutDouglas[interestedIn]) {
+  console.log(aboutDouglas[interestedIn]);
+} else {
+  console.log("Wrong request!");
+}
+```
+
+Caso o usuário tente colocar um valor que não seja uma propriedade existente no objeto, temos que retornará Wrong request!.
+
+- Usando a notação **Dot e Bracket para adicionar novas propriedades ao objeto.**
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+const interestedIn = prompt(
+  "What do you want to know about Douglas? Choose between firstName, lastName, age, job and friends"
+);
+
+// Notação Dot
+aboutDouglas.location = "Brazil";
+
+// Notação Bracket
+aboutDouglas["twitter"] = "@_dougcunha";
+
+// Caso a propriedade exista, retorna um valor diferente de 0.
+if (aboutDouglas[interestedIn]) {
+  console.log(aboutDouglas[interestedIn]);
+} else {
+  console.log("Wrong request!");
+}
+
+// Exibe todos os valores do objeto.
+console.log(aboutDouglas);
+```
+
+Note que para adicionar uma nova propriedade bastar passar um nome e um valor.
+
+- Desafio: Exiba a quantidade de elementos presentes na propriedade friends que armazena um array, e por fim exiba que o seu melhor amigo é o elemento de índice 0.
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+// Acessa a propriedade friends e retorna a quantidade de elementos presentes no array.
+const result = `${aboutDouglas.firstName} has ${aboutDouglas.friends.length} friends and his best friend is called ${aboutDouglas.friends[0]}`;
+
+console.log(result);
+```
+
+No exemplo acima acessamos o objeto aboutDouglas e acessamos a propriedade friends e firstName, em seguida usamos o método length para calcular a quantidade de elementos no array(propriedade friends). Por fim, acessamos apenas o elemento de índice 0 que é Joãozinho1.
+
+# Object Methods

@@ -13,10 +13,7 @@ const aboutDouglas = {
   ],
 };
 
-const interestedIn = prompt("What do you want to know about Douglas? Choose between firstName, lastName, age, job and friends");
+// Acessa a propriedade friends e retorna a quantidade de elementos presentes no array.
+const result = `${aboutDouglas.firstName} has ${aboutDouglas.friends.length} friends and his best friend is called ${aboutDouglas.friends[0]}`;
 
-// Resulta em undefined, pois ele tenta acessar uma propriedade(interestedIn) que não existe no objeto.
-console.log(aboutDouglas.interestedIn);
-
-// Retorna o valor passado para a variável interestedIn
-console.log(aboutDouglas[interestedIn]);
+console.log(result);
