@@ -747,4 +747,10 @@ const aboutDouglas = {
 console.log(aboutDouglas.getSumarry());
 ```
 
+O resultado seria:
+
+```text
+Douglas Cunha de Jesus is a 23 years old Student and he has no driver's license
+```
+
 Basicamente o que fizemos foi criar um método chamado getSumarry que retorna uma string literal. A depender do valor da propriedade hasDriversLicense retorna uma saída diferente. Note que acessamos as propriedades do objeto aboutDouglas usando this que faz referência ao objeto em questão. Além disso, note que fizemos uso do método calcAge e não da propriedade age em sí, isso se deve ao fato de que não há garantias de que o método calcAge tenha sido chamado para realizar o cálculo.
