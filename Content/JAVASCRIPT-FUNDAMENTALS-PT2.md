@@ -368,3 +368,144 @@ if (friends.includes("Peter")) {
 ```
 
 # Introduction to Objects
+
+Objetos são uma **estrutura de dado** que nos permite armazenar múltiplos valores **relacionados** em uma mesma variável. Ou seja, armazenamos valores **key-values(chave-valor), onde cada key tem seu respectivo valor.**
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+```
+
+No exemplo acima temos um objeto chamado aboutDouglas que armazena pares key-value(chave-valor), note que o primeiro par firstName armazena "Douglas" e por ai vai. Por fim, temos uma key que armazena um array de valores. Objetos trabalham com todos os tipos de dados vistos até agora.
+
+Podemos pensar que cada key é uma variável independente que armazena seus respectivos valores.
+
+Além disso, cada **key dessas é chamada de propriedade**. Ou seja, no exemplo acima temos cinco propriedades e 5 valores.
+
+Existem várias formas de criar objetos, a que usamos acima se chama **object literal.**
+
+Mas qual a grande diferença entre ararys e objects? Bem, a diferença é que em **Objects a ordem desses valores não importam, ou seja, só precisamos saber sua propriedade para podermos acessar. Já em arrays, é necessário saber o seu índice para ter acesso ao elemento.**
+
+# Dot vs Bracket Notation
+
+Nessa seção iremos aprender a como acessar e alterar valores em nossos Objetos. Para isso há duas notações, a **Dot e a Bracket.**
+
+- Acessando as propriedades de um objeto usando a notação Dot
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+// Acessamos o objeto utilizando a notação Dot e em seguida, acessamos a propriedade firstName.
+console.log(aboutDouglas.firstName);
+console.log(aboutDouglas.age);
+console.log(aboutDouglas.friends);
+```
+
+No exemplo acima acessamos o objeto aboutDouglas e acessamos as propriedades firstName, age e friends utilizando a notação Dot.
+
+- Acessando as propriedades de um objeto usando a notação Bracket
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+// Exibe o valor de cada key.
+console.log(aboutDouglas["firstName"]);
+console.log(aboutDouglas["age"]);
+console.log(aboutDouglas["Friends"]);
+```
+
+No exemplo acima usamos a notação Bracket(colchetes), note que dentro dos colchetes nós usamos aspas simples ou duplas e passamos o nome da propriedade. Por fim, é retornado o valor armazenado na propriedade.
+
+Além disso, podemos realizar operações dentro dos colchetes, vejamos
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+// Exibe o valor de cada key.
+const nameKey = "Name";
+console.log(aboutDouglas["first" + nameKey]);
+```
+
+No exemplo acima fazemos a operação de concatenação "first" + nameKey que possui valor Name, o resultado será firstName que é uma propriedade do objeto, portanto retorna o valor armazenado na propriedade.
+
+Mas qual das duas notações utilizar? A que você achar mais adequado para resolver seu problema. Vejamos um exemplo particular abaixo
+
+```js
+"use strict";
+const aboutDouglas = {
+  firstName: "Douglas",
+  lastName: "Cunha de Jesus",
+  age: 22,
+  job: "Student",
+  friends: [
+    "Joãozinho1",
+    "Joãozinho2",
+    "Joãozinho3",
+    "Joãozinho4",
+    "Joãozinho5",
+  ],
+};
+
+const interestedIn = prompt(
+  "What do you want to know about Douglas? Choose between firstName, lastName, age, job and friends"
+);
+
+// Resulta em undefined, pois ele tenta acessar uma propriedade(interestedIn) que não existe no objeto.
+console.log(aboutDouglas.interestedIn);
+
+// Retorna o valor passado para a variável interestedIn
+console.log(aboutDouglas[interestedIn]);
+```
+
+No exemplo acima note que se tentarmos acessar a propriedade passada com a notação Dot, vai resultar em undefined pois não é possível acessar diretamente uma propriedade que não existe. Já no segundo caso, é possível acessar o valor passado para a variável interestedIn, pois é possível computar a operação dentro do array.
