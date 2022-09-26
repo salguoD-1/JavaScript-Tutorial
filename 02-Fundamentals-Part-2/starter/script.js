@@ -1,3 +1,5 @@
-"use strict";
-const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
-console.log(aboutMe);
+const friends = ["Steven", "Peter", "Bob"];
+
+if (friends.includes("Peter")) {
+  console.log("You have a friend called Peter!");
+}

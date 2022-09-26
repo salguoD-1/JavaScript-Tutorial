@@ -244,3 +244,126 @@ const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
 console.log(aboutMe);
 ```
 
+Usando o **método length** para saber a quantidade de elementos presentes no array
+
+```js
+"use strict";
+const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
+// Exibe 3, pois temos 3 elementos dentro do array.
+console.log(aboutMe.length);
+```
+
+Acessando o último elemento de um array utilizando o método length
+
+```js
+"use strict";
+const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
+// Exibe 3, pois temos 3 elementos dentro do array.
+console.log(aboutMe[aboutMe.length - 1]);
+```
+
+O length - 1 se deve ao fato de que o índice começa em 0, logo como são 3 elementos temos que os índices serão: 0, 1 e 2. Além disso, usamos os colchetes para podermos acessar o índice de cada elemento.
+
+Imagine que queremos modificar o array alterando o valor de determinado elemento. Mas será que isso é possível? Afinal, estamos usando const que é imutável. A resposta é: Sim, podemos alterar um valor do array pois arrays não são um tipo de dado primitivo. Veremos mais sobre isso futuramente.
+
+```js
+"use strict";
+const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
+// [ 'Douglas', 22, 'Universidade Federal de Sergipe' ]
+console.log(aboutMe);
+// Alteramos o valor do elemento que possui índice 1.
+aboutMe[1] = 23;
+// [ 'Douglas', 23, 'Universidade Federal de Sergipe' ]
+console.log(aboutMe);
+```
+
+# Basic Array Operations(Methods)
+
+Podemos usar ferramentas para manipular arrays, nesse caso chamamos essas ferramentas de **métodos**. Vamos ver esses métodos em ação no exemplo abaixo.
+
+- O método **push adiciona elementos ao final do array.**
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Adiciona Jay ao final do array.
+friends.push("Jay");
+// Exibe: [ 'Michael', 'Steven', 'Peter', 'Jay' ]
+console.log(friends);
+```
+
+Basicamente a função push adiciona elementos ao final do array. O que a função/método push retorna é o length(tamanho) do novo array, nesse caso 4.
+
+- O método **unshift adiciona elementos no início do array.**
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Adiciona Douglas no ínicio do array.
+friends.unshift("Douglas");
+// Exibe: [ 'Douglas', 'Michael', 'Steven', 'Peter' ]
+console.log(friends);
+```
+
+Assim como o método push, o método unshift tem como retorno o length(tamanho) do array, nesse caso 4.
+
+- O método **pop remove o último elemento do array.**
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Remove o último elemento do arary.
+friends.pop();
+// Exibe: [ 'Michael', 'Steven' ]
+console.log(friends);
+```
+
+O método pop tem como retorno o elemento removido do array.
+
+- O método **shift remove o primeiro elemento do array.**
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Remove o primeiro elemento do arary.
+friends.shift();
+["Steven", "Peter"];
+console.log(friends);
+```
+
+Assim como pop, o método shift tem como retorno o elemento removido do array.
+
+- O método **indexOf('valor') retorna o índice do elemento no array.**
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Retorna o índice do elemento com valor "Steven", nesse caso 1.
+console.log(friends.indexOf("Steven"));
+```
+
+Caso o elemento não esteja no array, temos que o método indexOf irá retornar -1.
+
+- O método **includes é um método semelhante ao indexOf mas que faz parte da versão ES6, o método includes retorna true ou false a depender se o valor está ou não no array.**
+
+```js
+"use strict";
+const friends = ["Michael", "Steven", "Peter"];
+// Retorna true, pois Steven faz parte do array.
+console.log(friends.includes("Steven"));
+```
+
+O método includes faz uso do operador strict que analisa o tipo de dado e o valor passado, caso sejam iguais retorna true caso contrário retorna false.
+
+Uma aplicação interessante do método includes seria ao testar uma condição usando a estrutura condicional if/else.
+
+```js
+const friends = ["Steven", "Peter", "Bob"];
+
+// Como Peter faz parte do array, temos que o valor retornado é true.
+if (friends.includes("Peter")) {
+  console.log("You have a friend called Peter!");
+}
+```
+
+# Introduction to Objects
