@@ -754,3 +754,84 @@ Douglas Cunha de Jesus is a 23 years old Student and he has no driver's license
 ```
 
 Basicamente o que fizemos foi criar um método chamado getSumarry que retorna uma string literal. A depender do valor da propriedade hasDriversLicense retorna uma saída diferente. Note que acessamos as propriedades do objeto aboutDouglas usando this que faz referência ao objeto em questão. Além disso, note que fizemos uso do método calcAge e não da propriedade age em sí, isso se deve ao fato de que não há garantias de que o método calcAge tenha sido chamado para realizar o cálculo.
+
+# Iteration - The for Loop
+
+Um loop é uma estrutura de controle que nos permite executar um código quantas vezes desejarmos. Por exemplo, vamos exibir um contador que vai de 10 a 0, para isso fazemos o seguinte
+
+```js
+for (let i = 10; i >= 0; i--) {
+  console.log(i);
+}
+```
+
+No exemplo acima temos o seguinte, no primeiro valor temos o que chamamos de **INICIALIZADOR** que é onde declaramos uma variável e inicializamos com um valor desejado, em seguida temos a **CONDIÇÃO**, que é a nossa condição de execução do loop, enquanto ela for true temos que a estrutura for será executada. Por fim temos o **DECREMENTADOR/INCREMENTADOR** que é responsável por ir decrementando/incrementando nossa variável inicializadora.
+
+# Looping Arrays, Breaking and Continuing
+
+Podemos utilizar a estrutura de repetição para acessar os valores de um determinador array e exibir os seus valores.
+
+```js
+"use strict";
+const aboutMe = ["Douglas", 22, "Universidade Federal de Sergipe"];
+
+for (let i = 0; i < aboutMe.length; i++) {
+  console.log(aboutMe[i]);
+}
+```
+
+O código acima exibe
+
+```text
+Douglas
+22
+Universidade Federal de Sergipe
+```
+
+Ou seja, na condição passamos o array que queremos percorrer e usamos o método length para saber quantos elementos há no array. Ou seja, o array irá percorrer de 0(que é o índice do array) até o tamanho do array, por fim exibe os valores a cada iteração.
+
+- Instruções break e continue
+
+- Continue: Basicamente o que continue faz é sair da iteração atual e pular para a próxima iteração.
+
+- Break: Break encerra todo o loop, ou seja, quebra a estrutura.
+
+Exemplo com o comando continue
+
+```js
+"use strict";
+
+const myArray = [1, true, "Douglas", 23.4, "Pietro", false, "O hexa vem!!!"];
+
+// Exibe Douglas Pietro O hexa vem!!!
+for (let i = 0; i < myArray.length; i++) {
+  if (typeof myArray[i] === "string") {
+    console.log(myArray[i]);
+  } else {
+    continue;
+  }
+}
+```
+
+No exemplo acima temos um array com diversos tipos de dados diferentes, em seguida, usamos a estrutura for para percorrer todo o array, em seguida, temos uma estrutura if que só é executada caso o tipo de dado de cada elemento seja do tipo string, caso seja exibe o valor, caso contrário o comando else é executado e o comando continue faz com que a iteração atual seja pulada e passa para a próxima iteração.
+
+Exemplo com o comando break
+
+```js
+"use strict";
+
+const myArray = [1, true, "Douglas", 23.4, "Pietro", false, "O hexa vem!!!"];
+
+// Exibe 1
+for (let i = 0; i < myArray.length; i++) {
+  if (typeof myArray[i] === "boolean") {
+    break;
+  } else {
+    console.log(myArray[i]);
+  }
+}
+```
+
+No exemplo acima temos que, caso o elemento do array seja do tipo boolean, temos que a estrutura é encerrada por conta do comando break, caso contrário o comando else será executado e irá imprimir o valor do elemento do array naquela posição.
+
+# Looping Backwards and Loops in Loops
