@@ -1,11 +1,11 @@
 "use strict";
 
-const myArray = [1, true, "Douglas", 23.4, "Pietro", false, "O hexa vem!!!"];
+// Exemplo envolvendo um dado
+let dice = Math.trunc(Math.random() * 6) + 1;
 
-for (let i = 0; i < myArray.length; i++) {
-  if (typeof myArray[i] === "boolean") {
-    break;
-  } else {
-    console.log(myArray[i]);
-  }
+while (dice != 6) {
+  console.log(dice);
+
+  // Reatribuimos o valor a variável dice.
+  dice = Math.trunc(Math.random() * 6) + 1;
 }

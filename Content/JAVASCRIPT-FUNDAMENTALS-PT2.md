@@ -760,6 +760,7 @@ Basicamente o que fizemos foi criar um método chamado getSumarry que retorna um
 Um loop é uma estrutura de controle que nos permite executar um código quantas vezes desejarmos. Por exemplo, vamos exibir um contador que vai de 10 a 0, para isso fazemos o seguinte
 
 ```js
+"use strict";
 for (let i = 10; i >= 0; i--) {
   console.log(i);
 }
@@ -835,3 +836,79 @@ for (let i = 0; i < myArray.length; i++) {
 No exemplo acima temos que, caso o elemento do array seja do tipo boolean, temos que a estrutura é encerrada por conta do comando break, caso contrário o comando else será executado e irá imprimir o valor do elemento do array naquela posição.
 
 # Looping Backwards and Loops in Loops
+
+Para fazer a leitura de um array ao contrário, basta utilizar o método length - 1 para saber o tamanho do array e passar i como sendo o valor atual do índice do array.
+
+```js
+"use strict";
+
+const myArray = [1, true, "Douglas", 23.4, "Pietro", false, "O hexa vem!!!"];
+
+// Realizando uma leitura dos valores do array ao contrário
+for (let i = myArray.length - 1; i >= 0; i--) {
+  console.log(myArray[i]);
+}
+```
+
+```
+O hexa vem!!!
+false
+Pietro
+23.4
+Douglas
+true
+1
+```
+
+# Criando um loop dentro de um loop
+
+Podemos usar loops dentro de loops como visto abaixo.
+
+```js
+"use strict";
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`---------- Starting exercise ${exercise} ----------`);
+
+  for (let repetition = 1; repetition < 6; repetition++) {
+    console.log(`Lifting weight repetition ${repetition} 🏋️‍♂️`);
+  }
+}
+```
+
+# While loop
+
+A estrutura while loop necessita apenas uma condição para sua execução, enquanto essa condição for true temos que o bloco de código será executado.
+
+```js
+"use strict";
+
+let count = 10;
+
+while (count >= 0) {
+  console.log(count);
+
+  if (count == 0) {
+    console.log("Happy new year!!! ");
+  }
+  count--;
+}
+```
+
+Note que temos uma variável count que vai incrmentando uma unidade a cada iteração. Enquanto count for maior ou igual a 0 o código dentro da estrutura while será executado.
+
+```js
+"use strict";
+
+// Exemplo envolvendo um dado
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice != 6) {
+  console.log(dice);
+
+  // Reatribuimos o valor a variável dice.
+  dice = Math.trunc(Math.random() * 6) + 1;
+}
+```
+
+O método trunc arredonda um valor para o menor inteiro. Já o método random retorna um pseudo-valor aléatório.
