@@ -1,8 +1,18 @@
-// Remember, we're gonna use strict mode in all scripts now!
-'use strict';
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-const calcAge = (birthYear) => 2022 - 1999;
+let lower = temperatures[0];
+let max = temperatures[0];
 
-console.log(calcAge(2));
+for (let i = 0; i < temperatures.length; i++) {
+  if (typeof temperatures[i] == 'number') {
+      if (lower >= temperatures[i]) {
+          lower = temperatures[i]
+      } if (max <= temperatures[i]) {
+          max = temperatures[i];
+      }
+  } else {
+    console.log(temperatures[i])
+  }
+}
 
-// TODO
+console.log(`Amplitude = ${max - lower}`);
