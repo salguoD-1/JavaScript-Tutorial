@@ -111,3 +111,17 @@ Há três tipos de eventos para o teclado: Keydown, Keypress e Keyup
 - Keypress serve para quando pressionamos a tecla e não soltamos.
 
 - Keydown serve para quando pressionamos a tecla n vezes.
+
+```js
+// Aplicamos o evento a nível global.
+document.addEventListener('keydown', (event) => {
+  // Trabalhamos com três possiveis condições para a tecla ESC.
+  if (event.key === 'Escape' || event.key == 27 || event.key === 'Esc') {
+    // Analisamos se a classe hidden ja existe. Caso não exista chamamos a função closeModal.
+    if (!modal.classList.contains('hidden')) {
+      // Chamamos a função closeModal e colocamos o display como sendo none.
+      closeModal();
+    }
+  }
+});
+```
