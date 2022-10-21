@@ -88,3 +88,26 @@ document.querySelector('.number').style.width = '30rem';
 ```
 
 Todos os valores são atribuidos como string, além disso usamos a notação camel case para dizer quais propriedades queremos modificar.
+
+# Usando o método classList com a propriedade remove
+
+```js
+for (let i = 0; i < btnsOpenModal.length; i++) {
+  btnsOpenModal[i].addEventListener('click', () => {
+    // Usamos o método classList seguido de uma propriedade.
+    modal.classList.remove('hidden');
+  });
+}
+```
+
+O método classList nos permite selecionar classes existentes e realizar determinadas tarefas como remover alguma classe existente, adicionar uma nova classe etc. No exemplo acima temos que a propriedade remove irá analisar se existe uma classe chamada hidden, caso exista ela será removida.
+
+# Trabalhando com eventos relacionados ao teclado
+
+Há três tipos de eventos para o teclado: Keydown, Keypress e Keyup
+
+- Keyup serve para quando "soltamos" a tecla.
+
+- Keypress serve para quando pressionamos a tecla e não soltamos.
+
+- Keydown serve para quando pressionamos a tecla n vezes.
