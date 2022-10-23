@@ -134,3 +134,4 @@ O método toggle irá adicionar uma classe caso não exista no elemento, caso ex
 player0El.classList.toggle('player--active');
 player1El.classList.toggle('player--active');
 ```
+[Voltar para a página inicial](../README.md)

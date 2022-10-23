@@ -912,3 +912,5 @@ while (dice != 6) {
 ```
 
 O método trunc arredonda um valor para o menor inteiro. Já o método random retorna um pseudo-valor aléatório.
+
+[Voltar para a página inicial](../README.md)
