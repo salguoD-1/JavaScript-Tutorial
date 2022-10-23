@@ -125,3 +125,12 @@ document.addEventListener('keydown', (event) => {
   }
 });
 ```
+
+# O método toggle
+
+O método toggle irá adicionar uma classe caso não exista no elemento, caso exista o método toggle irá remover essa classe.
+
+```js
+player0El.classList.toggle('player--active');
+player1El.classList.toggle('player--active');
+```
